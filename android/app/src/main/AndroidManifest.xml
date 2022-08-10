@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.cruzze_solutions">
+    
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="cruzze_solutions"
         android:name="${applicationName}"

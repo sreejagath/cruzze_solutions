@@ -37,21 +37,20 @@ class ForgotPassword extends StatelessWidget {
                 child: GestureDetector(
                   onTap: (){
                     auth.forgotPassword(email.text).then((value){
-                      print(value.message);
                       Get.snackbar(value.message, value.message,
                         snackPosition: SnackPosition.BOTTOM,
                         backgroundColor: Colors.green,
                         borderRadius: 20,
-                        margin: EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
                         borderColor: Colors.green,
                         borderWidth: 2,
-                        duration: Duration(seconds: 2),
+                        duration: const Duration(seconds: 2),
                         colorText: Colors.white,
                       );
                       // showToast(value.message.toString());
                     });
                   },
-                  child: Text('Submit', style: const TextStyle(color: Colors.white, fontSize: 15)),
+                  child: const Text('Submit', style: TextStyle(color: Colors.white, fontSize: 15)),
                 )
               )
             ],

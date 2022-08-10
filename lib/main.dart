@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
   ToastContext().init(context);
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      title: 'Cruzze Solutions',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

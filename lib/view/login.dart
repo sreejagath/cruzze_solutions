@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:cruzze_solutions/controller/login_controller.dart';
 import 'package:cruzze_solutions/controller/ticket_controller.dart';
 import 'package:cruzze_solutions/view/forgotpass.dart';
@@ -51,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                   onTap: (){
                     Get.to(()=> const ForgotPassword());
                   },
-                  child: const Text('Forgot password?', style: const TextStyle(color: Colors.blue))),
+                  child: const Text('Forgot password?', style: TextStyle(color: Colors.blue))),
               ],)
             ],
           ),

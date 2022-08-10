@@ -1,8 +1,4 @@
-import 'package:cruzze_solutions/controller/login_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key, required this.ticket}) : super(key: key);
@@ -22,7 +18,7 @@ class HomePage extends StatelessWidget {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: <Widget>[
-              Container(
+              SizedBox(
                 height: MediaQuery.of(context).size.height *0.9,
                 child: ListView.builder(
                   shrinkWrap: true,
