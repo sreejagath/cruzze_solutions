@@ -1,6 +1,7 @@
 import 'package:cruzze_solutions/view/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:toast/toast.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+  ToastContext().init(context);
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(

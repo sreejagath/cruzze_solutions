@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:cruzze_solutions/controller/login_controller.dart';
 import 'package:cruzze_solutions/controller/ticket_controller.dart';
+import 'package:cruzze_solutions/view/forgotpass.dart';
 import 'package:cruzze_solutions/view/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -40,6 +41,18 @@ class _LoginPageState extends State<LoginPage> {
                   labelText: 'Enter password',
                 ),
               ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                GestureDetector(
+                  onTap: (){
+                    Get.to(()=> const ForgotPassword());
+                  },
+                  child: const Text('Forgot password?', style: const TextStyle(color: Colors.blue))),
+              ],)
             ],
           ),
         ),
@@ -63,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
               });
         },
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.arrow_forward_ios),
       ),
     );
   }

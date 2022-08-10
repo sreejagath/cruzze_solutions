@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:cruzze_solutions/constants/url.dart';
+import 'package:cruzze_solutions/model/forgotpassword.dart';
 import 'package:cruzze_solutions/model/login.dart';
 import 'package:cruzze_solutions/model/ticket.dart';
 import 'package:get/get.dart';
@@ -24,6 +25,22 @@ class Authentication extends GetxController {
     print('isLoggedIn: ${isLoggedIn.value}');
     print(token.value);
     return loginFromJson(response.body);
+  }
+
+  Future forgotPassword(String email) async{
+    Map data = {
+      'str_Domain': str_Domain,
+      'email': email,
+    };
+    var response = await http.post(Uri.parse('$forgotPasswordUrl'),
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: json.encode(data)
+    );
+    print(response.body);
+    //print('forgotPassword: ${login.message}');
+    return forgotPasswordFromJson(response.body);
   }
 
   Future fetchTickets(String authToken) async {
