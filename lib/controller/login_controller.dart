@@ -2,11 +2,13 @@ import 'dart:convert';
 
 import 'package:cruzze_solutions/constants/url.dart';
 import 'package:cruzze_solutions/model/login.dart';
+import 'package:cruzze_solutions/model/ticket.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
 class Authentication extends GetxController {
   var token = ''.obs;
+  var tickets = [].obs;
   Future login(String email, String password) async {
     var isLoggedIn = false.obs;
     var response = await http.post(Uri.parse(
@@ -48,7 +50,8 @@ class Authentication extends GetxController {
           "Content-Type": "application/json"
         },
         body: json.encode(data));
+      
     print(response.body);
-    return response.body;
+    return ticketFromJson(response.body);
   }
 }

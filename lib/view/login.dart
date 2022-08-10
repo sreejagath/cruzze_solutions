@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:cruzze_solutions/controller/login_controller.dart';
 import 'package:cruzze_solutions/controller/ticket_controller.dart';
 import 'package:cruzze_solutions/view/home.dart';
@@ -49,7 +51,9 @@ class _LoginPageState extends State<LoginPage> {
                   {
                     auth
                         .fetchTickets(value.authorization)
-                        .then((value) => Get.offAll(const HomePage()))
+                        .then((value) {
+                          auth.tickets.value = value.data;
+                          Get.offAll(HomePage(ticket: auth.tickets.value));})
                   }
                 else
                   {
