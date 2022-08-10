@@ -2,6 +2,7 @@
 //
 //     final ticket = ticketFromJson(jsonString);
 
+import 'package:meta/meta.dart';
 import 'dart:convert';
 
 Ticket ticketFromJson(String str) => Ticket.fromJson(json.decode(str));
@@ -10,30 +11,30 @@ String ticketToJson(Ticket data) => json.encode(data.toJson());
 
 class Ticket {
     Ticket({
-        this.data,
-        this.totalcount,
-        this.getJsonStart,
-        this.getJsonEnd,
-        this.process1Start,
-        this.process1End,
-        this.process2Start,
-        this.process2End,
-        this.process3Start,
-        this.process3End,
-        this.process4Start,
-        this.process4End,
-        this.process5Start,
-        this.process5End,
-        this.process6Start,
-        this.process6End,
-        this.process7Start,
-        this.process7End,
-        this.process8Start,
-        this.process8End,
-        this.process9Start,
-        this.process9End,
-        this.process10Start,
-        this.process10End,
+        required this.data,
+        required this.totalcount,
+        required this.getJsonStart,
+        required this.getJsonEnd,
+        required this.process1Start,
+        required this.process1End,
+        required this.process2Start,
+        required this.process2End,
+        required this.process3Start,
+        required this.process3End,
+        required this.process4Start,
+        required this.process4End,
+        required this.process5Start,
+        required this.process5End,
+        required this.process6Start,
+        required this.process6End,
+        required this.process7Start,
+        required this.process7End,
+        required this.process8Start,
+        required this.process8End,
+        required this.process9Start,
+        required this.process9End,
+        required this.process10Start,
+        required this.process10End,
     });
 
     List<Datum> data;
@@ -118,17 +119,17 @@ class Ticket {
 
 class Datum {
     Datum({
-        this.lngTicketId,
-        this.ticket,
-        this.project,
-        this.title,
-        this.createdBy,
-        this.created,
-        this.status,
-        this.statusId,
-        this.priority,
-        this.priorityId,
-        this.moduleName,
+        required this.lngTicketId,
+        required this.ticket,
+        required this.project,
+        required this.title,
+        required this.createdBy,
+        required this.created,
+        required this.status,
+        required this.statusId,
+        required this.priority,
+        required this.priorityId,
+        required this.moduleName,
     });
 
     int lngTicketId;
