@@ -1,4 +1,7 @@
+import 'package:cruzze_solutions/constants/color.dart';
+import 'package:cruzze_solutions/constants/font.dart';
 import 'package:cruzze_solutions/controller/login_controller.dart';
+import 'package:cruzze_solutions/view/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:toast/toast.dart';
@@ -17,11 +20,28 @@ class ForgotPassword extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              Row(
+                children: [
+                  montserrat('Forgot Password', size: 20, color: mainColor, fontWeight: FontWeight.bold),
+                ],
+              ),
+              const SizedBox(
+                height: 40,
+              ),
               TextField(
                 controller: email,
-                decoration: const InputDecoration(
-                  labelText: 'Enter email',
-                ),
+                decoration: InputDecoration(
+                    prefixIcon: const Icon(Icons.email, color: Colors.grey),
+                    hintText: 'Enter email',
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: mainColor, width: 1.0),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: mainColor, width: 1.0),
+                    ),
+                    border: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                    )),
               ),
               const SizedBox(
                 height: 20,
@@ -30,7 +50,7 @@ class ForgotPassword extends StatelessWidget {
                 height: 40,
                 width: MediaQuery.of(context).size.width*0.7,
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: mainColor,
                   borderRadius: BorderRadius.circular(30)
                 ),
                 alignment: Alignment.center,
@@ -52,7 +72,21 @@ class ForgotPassword extends StatelessWidget {
                   },
                   child: const Text('Submit', style: TextStyle(color: Colors.white, fontSize: 15)),
                 )
-              )
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  GestureDetector(
+                      onTap: () {
+                        Get.offAll(() => const LoginPage());
+                      },
+                      child: const Text('Login',
+                          style: TextStyle(color: Colors.blue))),
+                ],
+              ),
             ],
           ),
         ),

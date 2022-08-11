@@ -17,7 +17,7 @@ class Authentication extends GetxController {
     var login = Login.fromJson(json.decode(response.body));
     if (login.status == 'Success') {
       isLoggedIn.value = true;
-      token.value = login.authorization;
+      token.value = login.authorization!;
     } else {
       isLoggedIn.value = false;
     }

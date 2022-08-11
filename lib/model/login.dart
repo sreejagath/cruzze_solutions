@@ -12,24 +12,24 @@ class Login {
     Login({
         required this.status,
         required this.message,
-        required this.userId,
-        required this.organizationId,
-        required this.profileId,
-        required this.errorcode,
-        required this.isPrimary,
-        required this.createdDateDiff,
-        required this.authorization,
+         this.userId,
+         this.organizationId,
+         this.profileId,
+         this.errorcode,
+         this.isPrimary,
+         this.createdDateDiff,
+         this.authorization,
     });
 
     String status;
     String message;
-    int userId;
-    int organizationId;
-    int profileId;
-    int errorcode;
-    String isPrimary;
-    int createdDateDiff;
-    String authorization;
+    int? userId;
+    int? organizationId;
+    int? profileId;
+    int? errorcode;
+    String? isPrimary;
+    int? createdDateDiff;
+    String? authorization;
 
     factory Login.fromJson(Map<String, dynamic> json) => Login(
         status: json["status"],
